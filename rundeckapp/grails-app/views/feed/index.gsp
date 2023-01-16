@@ -22,7 +22,7 @@
 --%><%
         def exec
         if (report.executionId) {
-            exec = Execution.get(Long.parseLong(report.executionId))
+            exec = Execution.get(report.executionId)
         }
         item.title=(exec?exec.executionState:report.status=='succeed'?'SUCCEEDED':'FAILED')
         if(report.executionId){
